@@ -19,6 +19,8 @@ module.exports = {
             if (err) {
                 return next(err);
             }
+            res.setHeader("Access-Control-Allow-Origin", "*");
+            res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             res.json(posts);
         });
     },
